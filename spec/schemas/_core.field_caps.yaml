@@ -36,3 +36,14 @@ components:
         - aggregatable
         - searchable
         - type
+    FieldCapabilityFailure:
+      type: object
+      description: An index that couldn't be checked, for example because none of its shards were available.
+      properties:
+        index:
+          $ref: '_common.yaml#/components/schemas/IndexName'
+        reason:
+          $ref: '_common.yaml#/components/schemas/ErrorCause'
+      required:
+        - index
+        - reason
